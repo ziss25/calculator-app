@@ -63,6 +63,8 @@ main {
   font-size: 1.5rem;
 }
 .themes {
+  font-weight: 700;
+  // color: red;
   width: 110px;
   //   @include myBorder(blue);
   @include myFlex(flex-end, space-between);
@@ -84,7 +86,8 @@ main {
       @include border-radius();
       padding: 4px 3px;
       @include myFlex(center, space-between);
-      div {
+      .buttonTheme {
+        border: none;
         width: 12px;
         height: 12px;
         background-color: $Red;
@@ -93,7 +96,9 @@ main {
     }
   }
 }
-
+// .buttonTheme {
+//   background-color: red;
+// }
 // --- main body -----
 .main_body {
   // ntah
@@ -129,6 +134,7 @@ main {
   font-weight: 700;
   color: $VD-grayish-blue;
   cursor: pointer;
+  // color: hsl(60, 10%, 19%);
 }
 .span-reset {
   grid-column: 1 / 3;

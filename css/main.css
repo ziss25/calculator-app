@@ -32,6 +32,7 @@ main {
 }
 
 .themes {
+  font-weight: 700;
   width: 110px;
   display: flex;
   align-items: flex-end;
@@ -59,7 +60,8 @@ main {
   align-items: center;
   justify-content: space-between;
 }
-.themes .toggle-theme-contain .toogle div {
+.themes .toggle-theme-contain .toogle .buttonTheme {
+  border: none;
   width: 12px;
   height: 12px;
   background-color: hsl(6deg, 63%, 50%);
