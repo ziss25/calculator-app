@@ -10,7 +10,6 @@ const toogle = document.querySelector('.toogle');
 const output = document.querySelector('.output');
 const foot = document.querySelector('.foot');
 const containerKeypad = document.querySelector('.items');
-
 // keypad bg & shadow
 const itemColorAll = document.querySelectorAll('.item');
 const keyBgFirst = document.querySelectorAll('.key-bg-first');
@@ -37,7 +36,7 @@ class Themes {
     this.white = white;
   }
 }
-
+// theme change 
 theme1.addEventListener('click', () => {
   const themes1 = new Themes(
     'hsl(222, 26%, 31%)',
@@ -148,7 +147,6 @@ function changeColor(main, tk, screen, keyBg1, keyShadow, keybg2tg, keyShadow2, 
     element.style.color = '#fff';
   });
 }
-
 function cls(params) {
   console.log(params);
 }

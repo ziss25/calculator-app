@@ -91,6 +91,7 @@ main {
         width: 12px;
         height: 12px;
         background-color: $Red;
+        cursor: pointer;
         @include border-radius();
       }
     }
