@@ -19,6 +19,10 @@ const toogleBg = document.querySelectorAll('.toogle-bg');
 const keyBgLast = document.querySelectorAll('.key-bg-last');
 const colorWhite = document.querySelectorAll('.color-white');
 const cape = document.querySelector('#cape');
+// toogle
+// const themefirst = document.querySelector('#satu');
+// const themeMiddle = document.querySelector('#dua');
+// const themeLast = document.querySelector('#tiga');
 
 // class
 class Themes {
@@ -36,7 +40,7 @@ class Themes {
     this.white = white;
   }
 }
-// theme change 
+// theme change
 theme1.addEventListener('click', () => {
   const themes1 = new Themes(
     'hsl(222, 26%, 31%)',
@@ -59,6 +63,15 @@ theme1.addEventListener('click', () => {
   title.forEach((element) => {
     element.style.color = '#fff';
   });
+  // color cureent
+  theme1.style.opacity = '1';
+  // perbuhan sisanya
+  theme2.style.backgroundColor = '#aeaeae';
+  theme2.style.transition = 'all 1s';
+  theme2.style.opacity = '0.3';
+  theme3.style.backgroundColor = '#aeaeae';
+  theme3.style.transition = 'all 1s';
+  theme3.style.opacity = '0.3';
 });
 theme2.addEventListener('click', () => {
   const themes2 = new Themes(
@@ -76,6 +89,16 @@ theme2.addEventListener('click', () => {
   );
   changeColor(themes2.main, themes2.tk, themes2.screen, themes2.keyBg1, themes2.keyShadow, themes2.keyBg2Tg, themes2.keyShadow2, themes2.keyBg, themes2.keyShadow3, themes2.text, themes2.white);
   //   console.log(themes1);
+  // animation
+  // color saat ini
+  theme2.style.opacity = '1';
+  // perbahan sisanya
+  theme1.style.backgroundColor = '#aeaeae';
+  theme1.style.transition = 'all 1s';
+  theme1.style.opacity = '0.3';
+  theme3.style.backgroundColor = '#aeaeae';
+  theme3.style.transition = 'all 1s';
+  theme3.style.opacity = '0.3';
 });
 theme3.addEventListener('click', () => {
   const themes3 = new Themes(
@@ -97,6 +120,16 @@ theme3.addEventListener('click', () => {
   // tidak sesuai di class nya maka rebuild disini
   cape.style.color = 'hsl(198, 20%, 13%)';
   //   console.log(themes2);
+  // animation
+  // color saat ini
+  theme3.style.opacity = '1';
+  // perubahan sisanya
+  theme1.style.backgroundColor = '#aeaeae';
+  theme1.style.transition = 'all 1s';
+  theme1.style.opacity = '0.3';
+  theme2.style.backgroundColor = '#aeaeae';
+  theme2.style.transition = 'all 1s';
+  theme2.style.opacity = '0.3';
 });
 
 // func

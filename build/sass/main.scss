@@ -1,47 +1,20 @@
+// modules scss
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap');
-// --- Theme 1 ---
-// # Backgrounds
-$VD-desaturated-blue-m: hsl(222, 26%, 31%); // main
-$VD-desaturated-blue-tk: hsl(223, 31%, 20%); // toggle, keypad
-$VD-desaturated-blue-s: hsl(224, 36%, 15%); // screen
-// # Keys
-$Desaturated-dark-blue-bgkey: hsl(225, 21%, 49%); // (key background)
-$Desaturated-dark-blue: hsl(224, 28%, 35%); // (key shadow)
-$Red: hsl(6, 63%, 50%); // (key background, toggle)
-$Dark-red: hsl(6, 70%, 34%); //(key shadow)
-$Light-grayish-orange: hsl(30, 25%, 89%); //(key background)
-$Grayish-orange: hsl(28, 16%, 65%); // (key shadow)
-// # Text
-$VD-grayish-blue: hsl(221, 14%, 31%);
-$White: hsl(0, 0, 100%);
+@import 'variable';
+@import 'mixin';
+@import 'reset';
+@import 'mainHeader';
+@import 'mainBody';
+@import 'mainBody';
+@import 'mainFooter';
 
-// reset
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'League Spartan', sans-serif;
-}
-
-// mixin
-@mixin myFlex($align, $justy) {
-  display: flex;
-  align-items: $align;
-  justify-content: $justy;
-}
-@mixin myBorder($color: red) {
-  border: 1px solid $color;
-}
-@mixin border-radius {
-  border-radius: 12px;
-}
-
+// container main
 body {
   padding: 2rem;
   //   height: 100vh;
   //   @include myFlex(center, center);
   background-color: $VD-desaturated-blue-m;
 }
-// ---  main -------
 main {
   //   border: 1px solid red;
   margin: 2rem auto;
@@ -51,130 +24,7 @@ main {
   width: 300px;
 }
 
-// --- main heading---
-.main_heading {
-  font-weight: 600;
-  color: $White;
-  margin-bottom: 1rem;
-  @include myFlex(center, space-between);
-  //   @include myBorder();
-}
-.title {
-  font-size: 1.5rem;
-}
-.themes {
-  font-weight: 700;
-  // color: red;
-  width: 110px;
-  //   @include myBorder(blue);
-  @include myFlex(flex-end, space-between);
-  //   margin-top: -6px;
-  .themes-title {
-    font-size: 12px;
-  }
-  .toggle-theme-contain {
-    width: 55px;
-    // @include myBorder(blue);
-    .number-toogle {
-      font-size: 10px;
-      margin: 0 6px;
-      @include myFlex(center, space-between);
-      margin-bottom: 3px;
-    }
-    .toogle {
-      background-color: $VD-desaturated-blue-tk;
-      @include border-radius();
-      padding: 4px 3px;
-      @include myFlex(center, space-between);
-      .buttonTheme {
-        border: none;
-        width: 12px;
-        height: 12px;
-        background-color: $Red;
-        cursor: pointer;
-        @include border-radius();
-      }
-    }
-  }
-}
-// .buttonTheme {
-//   background-color: red;
-// }
-// --- main body -----
-.main_body {
-  // ntah
-}
-.output {
-  @include border-radius();
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 1.25rem;
-  background-color: $VD-desaturated-blue-s;
-  color: $White;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-.items {
-  @include border-radius();
-  //   @include myBorder();
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  padding: 1rem;
-  background-color: $VD-desaturated-blue-tk;
-}
-
-// class utilitis / Modifier
-.item {
-  border: none;
-  border-radius: 6px;
-  padding: 1rem 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: $VD-grayish-blue;
-  cursor: pointer;
-  // color: hsl(60, 10%, 19%);
-}
-.span-reset {
-  grid-column: 1 / 3;
-  grid-row: 5 / 6;
-}
-.span-dengan {
-  grid-column: 3 / 5;
-  grid-row: 5 / 6;
-}
-.key-light {
-  background-color: $Light-grayish-orange;
-  box-shadow: 0 4px $Grayish-orange;
-}
-.key-blue {
-  background-color: $Desaturated-dark-blue-bgkey;
-  box-shadow: 0 4px $Desaturated-dark-blue;
-  color: white;
-  font-size: 16px;
-}
-.key-orange {
-  background-color: $Red;
-  box-shadow: 0 4px $Dark-red;
-  color: white;
-  font-size: 18px;
-}
-
-// -- main footer ---
-.main_footer {
-  margin-top: 1rem;
-  font-size: 0.7rem;
-  text-align: center;
-  color: $VD-desaturated-blue-s;
-  a {
-    text-decoration: none;
-    color: $Light-grayish-orange;
-  }
-}
-
-//responsive tablet >...
+//responsive
 @media only screen and (min-width: 600px) {
   main {
     width: 500px;

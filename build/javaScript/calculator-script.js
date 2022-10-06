@@ -15,12 +15,14 @@ class Calculator {
     this.operand = '';
   }
   clear() {
+    // clear all property
     this.curr = '';
     this.prev = '';
     this.operand = '';
     this.#showDisplay();
   }
   delete() {
+    // deleted values current
     this.curr = this.curr.slice(0, -1);
     this.#showDisplay();
   }
@@ -33,14 +35,12 @@ class Calculator {
     // jika user udah values pertama udah fix maka kita pindahkan ke change
     // condition
     if (this.curr == '') {
-      console.log('return');
+      // console.log('return');
       return;
     }
     if (this.prev !== '') {
-      console.log('okee data aman silahkan di kalkulasikan ...');
+      // console.log('okee data aman silahkan di kalkulasikan ...');
       this.calculation();
-    } else {
-      console.log('prev nya kosong maka dari itu harus di isi dlu...change cur -> prev');
     }
     this.operand = operand;
     this.prev = this.curr;
@@ -69,21 +69,32 @@ class Calculator {
       default:
         return;
     }
+    // console.log(hasil);
     this.curr = hasil;
     this.prev = '';
     this.operand = '';
     this.#showDisplay();
   }
-  //   #getNumberDisplay(numberCurr) {
-  //     if (isNaN(numberCurr)) {
-  //       return;
-  //     }
-  //     console.log(numberCurr);
-  //   }
+  getNumberDisplay(number) {
+    let parseString = number.toString();
+    let Interger = parseFloat(parseString.split('.')[0]);
+    let decimal = parseString.split('.')[1];
+    let resultValue;
+    if (isNaN(Interger)) {
+      resultValue = '';
+    } else {
+      resultValue = Interger.toLocaleString('id');
+    }
+    if (decimal != null) {
+      resultValue = `${Interger},${decimal}`;
+      return resultValue;
+    } else {
+      return resultValue;
+    }
+  }
   #showDisplay() {
-    // let results = this.#getNumberDisplay(this.curr);
-    current.innerText = this.curr;
-    previos.innerText = `${this.prev} ${this.operand}`;
+    current.innerText = this.getNumberDisplay(this.curr);
+    previos.innerText = `${this.getNumberDisplay(this.prev)}${this.operand}`;
   }
 }
 // object instence
@@ -91,7 +102,11 @@ const calculator = new Calculator();
 // event
 numbers.forEach((number) => {
   number.addEventListener('click', () => {
-    calculator.append(number.innerText);
+    if (number.innerText == ',') {
+      calculator.append('.');
+    } else {
+      calculator.append(number.innerText);
+    }
   });
 });
 operands.forEach((operand) => {
@@ -118,12 +133,7 @@ function testingMethod() {
   let pisah1 = values1.split('.')[0];
   let pisah2 = values1.split('.')[1];
   let hasilValus1 = `${pisah1}${pisah2}`;
-  // console.log(hasilValus1);
   let values2 = '2.517';
   console.log(parseFloat(hasilValus1));
   console.log(parseFloat(values2));
 }
-
-// intinya dah selesai
-// paling tinggal
-// include number ribuan & validasi belakang layar nya aja selebihnya udah
